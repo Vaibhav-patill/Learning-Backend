@@ -10,14 +10,20 @@ const requesthandler=require("./user");
 const app=express();
 
 //Adding middleware
-app.use((req, res, next) => {
+app.get("/",(req, res, next) => {
     console.log("Came in first middleware",req.url, req.method);
+    // res.send("<p>Came from another middleware</p>");
     next();
 });
 
-app.use((req, res, next) => {
+app.post("/submit-details",(req, res, next) => {
     console.log("Came in second middleware",req.url, req.method);
     res.send("<p>Welcome to second middleware</p>");
+});
+
+app.use("/",(req, res, next) => {
+    console.log("Came in another middleware",req.url, req.method);
+    res.send("<p>Came from another middleware</p>");
 });
 
 
