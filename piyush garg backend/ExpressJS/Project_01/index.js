@@ -2,12 +2,25 @@ const express = require("express");
 const fs = require("fs");
 const users = require("./MOCK_DATA.json");
 const { json } = require("stream/consumers");
+const { nextTick } = require("process");
 
 const app = express();
 const PORT = 8000;
 
 app.use(express.urlencoded({ extended: false }));
 
+app.use((req,res,next)=>{
+  console.log("come in first middleware");
+  // return res.json({mgs:"first middleware"});
+  next();
+})
+
+app.use((req,res,next)=>{
+  console.log("come in first middleware");
+  // return res.json({mgs:"first middleware"});
+  next();
+})
+ 
 //Routes
 app.get("/users", (req, res) => {
   res.send(`
@@ -19,6 +32,8 @@ app.get("/users", (req, res) => {
 });
 
 app.get("/api/users", (req, res) => {
+  res.setHeader('myName','Vaibhav Patil');
+  console.log(req.headers);
   return res.json(users);
 });
 
