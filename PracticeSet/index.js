@@ -10,7 +10,7 @@ const server = http.createServer((req, res) => {
     res.write("<h1>Men Page</h1>");
     return res.end();
   } else if (req.url === "/women") {
-    res.write("<h1>Woen Page</h1>");
+    res.write("<h1>Women Page</h1>");
     return res.end();
   } else if (req.url === "/kids") {
     res.write("<h1>Kids Page</h1>");
