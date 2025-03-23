@@ -1,0 +1,26 @@
+[
+  {
+    "id": "1",
+    "houseName": "Utsav",
+    "price": "1299",
+    "location": "Ghaziabad",
+    "rating": "4",
+    "photoUrl": "asdf"
+  },
+  {
+    "id": "2",
+    "houseName": "Second House",
+    "price": "999",
+    "location": "Ghaziabad",
+    "rating": "4",
+    "photoUrl": "asdf"
+  },
+  {
+    "houseName": "Summer Home",
+    "price": "999",
+    "location": "Goa",
+    "rating": "5",
+    "photoUrl": "https://a0.muscache.com/im/pictures/d03d9889-b6c3-42f5-ad84-2c6c4b7a57b2.jpg",
+    "id": "0.18217929897246976"
+  }
+]
