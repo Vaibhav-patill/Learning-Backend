@@ -56,9 +56,31 @@ getWorkType = async (req, res) => {
   }
 };
 
+updatePerson = async (req, res) => {
+  try {
+    const personId = req.params.id;
+    const updateData = req.body;
+    const result = await Person.findByIdAndUpdate(
+      personId,
+      updateData,
+      { new: true, runValidators: true } // Return the updated document and run validators
+    );
+    if (!result) {
+      return res.status(404).json({ message: "Person not found" });
+    }
+    console.log("data updated");    
+    res.status(200).json(result);
+    
+  } catch (error) {
+    console.error("Error updating person:", error);
+    res.status(500).json({ message: "Internal server error" });
+  }
+};
+
 module.exports = {
   postAddPerson,
   getPerson,
   deletePerson,
   getWorkType,
+  updatePerson,
 };
