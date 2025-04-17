@@ -5,8 +5,6 @@ const db = require("./db");
 const bodyParser = require("body-parser");
 app.use(bodyParser.json());
 
-const Person = require("./models/Person");
-const Menu = require("./models/Menu");
 const menuRouter = require("./routes/menuRouter");
 const personRouter = require("./routes/personRoutes");
 app.use("/person",personRouter);
